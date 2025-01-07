@@ -9,7 +9,7 @@ const countConnect = () => {
 const checkOverload = () => {
   setInterval(() => {
     const numConnection = mongoose.connections.length;
-    const memoryUsage = process.memoryUsage().heapUsed / 1024 / 1024;
+    const memoryUsage = process.memoryUsage().rss / 1024 / 1024;
 
     console.log(`Active connections:: ${numConnection}`);
     console.log(`Memory usage:: ${memoryUsage} MB`);
