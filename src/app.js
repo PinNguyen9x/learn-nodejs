@@ -11,12 +11,10 @@ app.use(helmet());
 app.use(compression());
 
 // Init Routes
-app.get("/", (req, res, next) => {
-  res.status(200).json({ message: "Hello World!" });
-});
+app.use("/", require("./routes"));
 
 // init db
-require("./dbs/init.mongodb");
+// require("./dbs/init.mongodb");
 // const { checkOverload } = require("./helpers/check.connectdb");
 // checkOverload();
 
